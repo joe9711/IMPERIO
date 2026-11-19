@@ -1,0 +1,7 @@
+LOGOS DE ALIADOS (carpeta logos/)
+
+Ya incluidos y optimizados (fondo transparente):
+  moneygram.png, ria.png, vigo.png, barri.png, viamericas.png, girosol.png
+
+La web ya los lleva incrustados, así que no necesita esta carpeta para funcionar.
+Estos archivos quedan aquí como copia para usarlos en volantes, redes, etc.
