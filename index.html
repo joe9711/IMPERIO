@@ -538,11 +538,11 @@ footer a{text-decoration:none}
 #tce .sheet .content{color:#3E7B18;font-size:15px;font-weight:700;height:48px}
 #tce .sheet .tall{height:46px}
 #tce .sheet .meta{font-size:10px;color:#555;text-align:right;margin-top:6px;text-transform:none}
-#tce .sheet .opby{display:flex;align-items:center;justify-content:center;gap:10px;background:#000;border-radius:10px;padding:8px 12px;margin:0 0 10px}
-#tce .sheet .opby .opk{color:#B9AC8C;font:600 13px Inter,Arial,sans-serif}
-#tce .sheet .opby svg{width:34px;height:34px;border-radius:50%;background:#fff;padding:1px;flex:none}
-#tce .sheet .opby b{font:800 18px "Inter Tight",Inter,Arial,sans-serif;color:#fff;letter-spacing:-.02em}
-#tce .sheet .opby b span{color:#D9B35E}
+#tce .sheet .opby{display:flex;align-items:center;justify-content:center;gap:7px;margin:-4px 0 12px}
+#tce .sheet .opby .opk{color:#6E6E73;font:600 12px Inter,Arial,sans-serif}
+#tce .sheet .opby svg{width:26px;height:26px;border-radius:50%;background:#fff;flex:none}
+#tce .sheet .opby b{font:800 15px "Inter Tight",Inter,Arial,sans-serif;color:#16130D;letter-spacing:-.02em}
+#tce .sheet .opby b span{color:#B48B36}
 #tce .sheet .sig{display:block;height:64px;max-width:260px;object-fit:contain;margin-top:4px}
 #tce .sigbox{position:relative;background:#fff;border:2px dashed var(--line);border-radius:14px;height:190px;touch-action:none}
 #tce .sigbox canvas{position:absolute;inset:0;width:100%;height:100%;border-radius:12px;cursor:crosshair;touch-action:none}
@@ -1878,7 +1878,7 @@ async function drawSheet(d){
     const h=Math.max(...cs.map(k=>(k.stack?k.lines.length+1:k.lines.length)*LH))+2*PADY;
     return {...r,cs,h};
   });
-  const TOP=245, H=TOP+lay.reduce((a,r)=>a+r.h,0)+70;
+  const TOP=200, H=TOP+lay.reduce((a,r)=>a+r.h,0)+70;
   cv.width=W; cv.height=H;
   x.fillStyle="#fff"; x.fillRect(0,0,W,H);
   // título
@@ -1886,17 +1886,16 @@ async function drawSheet(d){
   x.fillStyle="#EC6A1E"; x.fillText("TU CAJA EXPRESS",W/2+5,112); x.fillStyle="#1C1B19"; x.fillText("TU CAJA EXPRESS",W/2,107);
   x.textAlign="left";
   let y=TOP; x.strokeStyle="#222"; x.lineWidth=2;
-  // Banda "Operado por Imperio Multi Services" (igual que la esquina de la página)
-  { const by=132, bh=84; x.fillStyle="#000"; x.beginPath(); x.roundRect?x.roundRect(P,by,CW,bh,16):x.rect(P,by,CW,bh); x.fill();
-    const logo=await loadImg("logo.png"), ls=60;
-    const f1='600 22px Inter, Arial, sans-serif', f2='800 30px "Inter Tight", Inter, Arial, sans-serif';
-    x.font=f1; const t0="Operado por", w0=x.measureText(t0).width;
+  // "Imperio Multi Services" con logo, pequeño debajo del título
+  { const mid=158, ls=46, logo=await loadImg("logo.png");
+    const f1='600 20px Inter, Arial, sans-serif', f2='800 24px "Inter Tight", Inter, Arial, sans-serif';
+    x.font=f1; const t0="Operado por ", w0=x.measureText(t0).width;
     x.font=f2; const w1=x.measureText("Imperio ").width, w2=x.measureText("Multi Services").width;
-    const tw=(logo?ls+16:0)+w0+14+w1+w2; let cx=W/2-tw/2; const mid=by+bh/2;
+    const tw=w0+(logo?ls+10:0)+w1+w2; let cx=W/2-tw/2;
     x.textAlign="left"; x.textBaseline="middle";
-    x.font=f1; x.fillStyle="#B9AC8C"; x.fillText(t0,cx,mid+1); cx+=w0+14;
-    if(logo){ x.save(); x.beginPath(); x.arc(cx+ls/2,mid,ls/2,0,7); x.fillStyle="#fff"; x.fill(); x.clip(); x.drawImage(logo,cx,mid-ls/2,ls,ls); x.restore(); cx+=ls+16; }
-    x.font=f2; x.fillStyle="#FFFFFF"; x.fillText("Imperio ",cx,mid+1); x.fillStyle="#D9B35E"; x.fillText("Multi Services",cx+w1,mid+1);
+    x.font=f1; x.fillStyle="#6E6E73"; x.fillText(t0,cx,mid+1); cx+=w0;
+    if(logo){ x.save(); x.beginPath(); x.arc(cx+ls/2,mid,ls/2,0,7); x.fillStyle="#fff"; x.fill(); x.clip(); x.drawImage(logo,cx,mid-ls/2,ls,ls); x.restore(); cx+=ls+10; }
+    x.font=f2; x.fillStyle="#16130D"; x.fillText("Imperio ",cx,mid+1); x.fillStyle="#B48B36"; x.fillText("Multi Services",cx+w1,mid+1);
     x.textBaseline="alphabetic"; }
   const sigImg=await loadImg(d.sig);
   for(const r of lay){
@@ -1918,7 +1917,7 @@ async function drawSheet(d){
 async function buildShot(){
   try{
     data.f = new Date().toLocaleString("es-US",{dateStyle:"short",timeStyle:"short"});
-    if(document.fonts&&document.fonts.load) { try{ await document.fonts.load('84px Anton'); }catch(e){} }
+    if(document.fonts&&document.fonts.load){ try{ await Promise.race([Promise.all([document.fonts.load('84px Anton'),document.fonts.load('800 24px "Inter Tight"'),document.fonts.load('600 20px Inter'),document.fonts.ready]), new Promise(r=>setTimeout(r,2500))]); }catch(e){} }
     const cv=await drawSheet(data);
     shotURL=cv.toDataURL("image/jpeg",.9);
     shotBlob=await new Promise(r=>cv.toBlob(r,"image/jpeg",.9));
