@@ -284,6 +284,7 @@ html,body{overflow-x:hidden}
 .calc .cbtn{background:#0E0C08;color:#E6C676;min-height:56px;font-size:18px}
 .calc .cbtn:hover{background:#1E1A12}
 .calc .cask{color:#1A1408;font-size:15px}
+.calc .sx-cta{background:#FFFAEB;color:#0E0C08;border:2px solid #0E0C08;margin-top:8px;min-height:54px;font-size:17px}
 
 /* Servicios: tiles negro y dorado */
 .view.dark{background:#000;color:#F5F5F7}
@@ -370,6 +371,82 @@ a.also-card:hover{border-color:#D4AF5A}
 .trk-btns .btn[hidden]{display:none}
 .btn.wa-btn{background:#1FA855;color:#fff}
 .trk-note{font-size:14px!important;color:#8E8E93!important;margin:14px 0 0!important}
+
+
+/* Solicitud de envío de dinero (estilo formulario de agente) */
+.vx{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+@media (max-width:900px){.vx{grid-template-columns:1fr}}
+.vx-h{display:flex;align-items:center;gap:12px;margin:26px 0 12px}
+.vx-h:first-child{margin-top:4px}
+.vx-h h3{font:800 21px "Inter Tight","Inter",sans-serif;letter-spacing:-.02em;color:#F5F5F7;margin:0}
+.vx-ic{width:40px;height:40px;border-radius:10px;background:#1E1A10;color:#D4AF5A;display:flex;align-items:center;justify-content:center;flex:none}
+.vx-ic svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.vx-card{background:#0F0F0F;border:1px solid #2A2417;border-radius:18px;padding:8px 20px 16px}
+.ul{position:relative;padding-top:20px;margin-bottom:6px}
+.ul input,.ul select{width:100%;background:transparent;border:0;border-bottom:1.5px solid #3A3A3C;color:#F5F5F7;font:600 18px "Inter",sans-serif;padding:8px 0 9px;outline:none;border-radius:0;-webkit-appearance:none;appearance:none}
+.ul select{cursor:pointer;padding-right:26px}
+.ul.sel::after{content:"";position:absolute;right:4px;top:34px;width:9px;height:9px;border-right:2px solid #D4AF5A;border-bottom:2px solid #D4AF5A;transform:rotate(45deg);pointer-events:none}
+.ul select option{color:#111}
+.ul label{position:absolute;left:0;top:28px;color:#8E8E93;font:500 17px "Inter",sans-serif;pointer-events:none;transition:all .18s ease}
+.ul input:focus~label,.ul input:not(:placeholder-shown)~label,.ul.sel label{top:2px;font-size:13px;font-weight:700;color:#D4AF5A}
+.ul input:focus,.ul select:focus{border-bottom-color:#D4AF5A}
+.ul .hint{display:block;color:#6E6E73;font-size:12.5px;margin-top:4px}
+.ul .err{display:none;color:#FF8A80;font-size:13px;font-weight:700;margin-top:4px}
+.ul.bad input{border-bottom-color:#FF6B5E}.ul.bad .err{display:block}
+.vx-lab{font-size:13px;font-weight:700;color:#D4AF5A;margin:14px 0 8px}
+.vx-lab.dk{color:#6B4F18;margin-top:0}
+.vx-chips{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:6px}
+@media (max-width:560px){.vx-chips{grid-template-columns:repeat(3,1fr)}}
+.vx-chip{font:700 12.5px "Inter",sans-serif;color:#D9D9DE;background:#161513;border:1.5px solid #2E2A20;border-radius:12px;padding:8px 2px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+.vx-chip .e{font-size:20px;line-height:1}
+.vx-chip[aria-pressed="true"]{background:#D4AF5A;border-color:#D4AF5A;color:#0E0C08}
+.vx-two{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 0 4px}
+.vx-opt{font:700 15px "Inter",sans-serif;color:#D9D9DE;background:#161513;border:1.5px solid #2E2A20;border-radius:14px;padding:12px 8px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px}
+.vx-opt span{font-size:20px}
+.vx-opt[aria-pressed="true"]{background:#D4AF5A;border-color:#D4AF5A;color:#0E0C08}
+.vx-right{position:sticky;top:84px}
+@media (max-width:900px){.vx-right{position:static}}
+.vx-sum{background:linear-gradient(155deg,#F1DC9E 0%,#D9B867 45%,#C49A44 100%);color:#1A1408;border-radius:22px;padding:20px 18px;box-shadow:0 20px 60px rgba(212,175,90,.22)}
+.vx-row{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:center}
+.vx-row i{font-style:normal;font-weight:800;color:#6B4F18}
+.vx-box{display:flex;align-items:baseline;justify-content:flex-end;gap:6px;background:#FFFAEB;border:1.5px solid rgba(26,20,8,.2);border-radius:12px;padding:8px 10px;min-height:52px}
+.vx-box input{width:100%;min-width:0;border:0;background:none;text-align:right;font:800 24px "Inter Tight",sans-serif;color:#0E0C08;outline:none;padding:0}
+.vx-box span{font-size:12px;font-weight:800;color:#6B5A36}
+.vx-box.ro{background:rgba(255,250,235,.55)}
+.vx-box.ro b{font:800 20px "Inter Tight",sans-serif}
+.vx-box.bad{border-color:#B3261E}
+.vx-mini{display:grid;grid-template-columns:1fr 1fr;gap:30px;font-size:12px;color:#6B5A36;margin:4px 2px 0}
+.vx-mini span:last-child{text-align:right}
+.vx-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin:10px 0 0}
+.vx-quick button{font:800 14px "Inter",sans-serif;color:#1A1408;background:rgba(255,250,235,.62);border:1.5px solid rgba(26,20,8,.16);border-radius:10px;padding:7px 0;cursor:pointer}
+.vx-eq{background:#0E0C08;color:#F5F5F7;border-radius:16px;padding:14px;text-align:center;margin:14px 0 8px}
+.vx-eq small{display:block;color:#E6C676;font-weight:800;font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.vx-eq strong{display:block;font:900 36px "Inter Tight",sans-serif;margin:2px 0}
+.vx-eq span{color:#C9C3B4;font-size:14px}
+.vx-line{display:flex;justify-content:space-between;align-items:center;padding:9px 2px;border-bottom:1px solid rgba(26,20,8,.15);font-size:15px}
+.vx-line b{font-weight:800;text-align:right}
+.vx-line.tot{font-size:18px;border-bottom:0}
+.vx-line.tot b{font:900 22px "Inter Tight",sans-serif}
+.ul.lt input,.ul.lt select{color:#1A1408;border-bottom-color:rgba(26,20,8,.3);font-size:16px}
+.ul.lt label{color:#5A4B2C}
+.ul.lt input:focus~label,.ul.lt input:not(:placeholder-shown)~label,.ul.lt.sel label{color:#6B4F18}
+.ul.lt.sel::after{border-color:#0E0C08}
+.vx-ok{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;font-weight:600;cursor:pointer}
+.vx-ok input{width:22px;height:22px;flex:none;margin-top:1px;accent-color:#0E0C08}
+.vx-ok.bad{color:#9A1C14}
+.vx-send{width:100%;margin-top:14px;min-height:58px;font-size:18px;background:#0E0C08;color:#E6C676}
+.vx-send:disabled{opacity:.6}
+.vx-legal{font-size:12px;color:#4A3F2A;margin:10px 0 0;line-height:1.45}
+#vxDone .sx-done{max-width:560px;margin:0 auto;background:linear-gradient(155deg,#F1DC9E,#C49A44);color:#1A1408;border-radius:22px;padding:24px 20px}
+.sx-done{text-align:center}
+.sx-done .ck{width:64px;height:64px;border-radius:50%;background:#0E0C08;color:#E6C676;font-size:34px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px}
+.sx-done h3{font:900 26px "Inter Tight",sans-serif;margin:0 0 6px}
+.sx-done .refno{display:inline-block;font:800 22px "Inter Tight",sans-serif;background:#0E0C08;color:#E6C676;border-radius:10px;padding:6px 14px;margin:8px 0 12px;letter-spacing:.04em}
+.sx-done ol{text-align:left;font-size:15.5px;margin:6px 0 16px;padding-left:22px}
+.sx-done ol li{margin-bottom:6px}
+.sx-done .btn{width:100%;margin-top:8px}
+.sx-done .wa-btn{background:#1FA855;color:#fff}
+.sx-done .lite{background:rgba(255,250,235,.62);color:#1A1408;border:1.5px solid rgba(26,20,8,.2)}
 
 /* Nosotros */
 .split{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;align-items:start}
@@ -717,6 +794,7 @@ body.on-form footer{padding-bottom:120px}
         </div>
         <p class="cnote" id="cNote">Cargando la tasa de hoy…</p>
         <a class="btn gold cbtn" id="cGo" href="https://v.viax.co/A18802_es" target="_blank" rel="noopener">Enviar por WhatsApp</a>
+        <a class="btn cbtn sx-cta" href="#enviar">Preparar mi envío con Imperio</a>
         <a class="cask" id="cAsk" href="tel:+18593687605">¿Dudas? Llámanos al (859) 368-7605</a>
       </div>
     </div>
@@ -758,7 +836,7 @@ body.on-form footer{padding-bottom:120px}
     </div>
     <div class="tile-cta" id="tileCta" hidden>
       <p id="tileMsg"></p>
-      <div class="btns"><a class="btn gold" id="tileWa" href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn line" id="tileCaja" href="#formulario" hidden>Llenar formulario de envío</a><a class="btn line" id="tileCalc" href="#calculadora" hidden>Calcular cuánto reciben</a><a class="btn line" id="tileTrack" href="#rastreo" hidden>¿Dónde está mi envío?</a></div>
+      <div class="btns"><a class="btn gold" id="tileWa" href="#" target="_blank" rel="noopener">Preguntar por WhatsApp</a><a class="btn line" id="tileCaja" href="#formulario" hidden>Llenar formulario de envío</a><a class="btn line" id="tileCalc" href="#calculadora" hidden>Calcular cuánto reciben</a><a class="btn line" id="tileSend" href="#enviar" hidden>Preparar mi envío</a><a class="btn line" id="tileTrack" href="#rastreo" hidden>¿Dónde está mi envío?</a></div>
     </div>
     <p class="sub">Enviamos dinero con</p>
     <div class="logos" id="logoWall"></div>
@@ -864,6 +942,81 @@ body.on-form footer{padding-bottom:120px}
   </div></div>
 </section>
 
+<!-- ================= SOLICITUD DE ENVÍO DE DINERO ================= -->
+<section class="view dark" id="v-enviar" aria-label="Solicitud de envío de dinero">
+  <div class="sec"><div class="wrap">
+    <form name="solicitud-envio" data-netlify="true" netlify-honeypot="bot-field" hidden><input name="bot-field"><input name="ref"><input name="fecha"><input name="remitente_nombres"><input name="remitente_apellido1"><input name="remitente_apellido2"><input name="remitente_telefono"><input name="remitente_direccion"><input name="remitente_interior"><input name="beneficiario_nombres"><input name="beneficiario_apellido1"><input name="beneficiario_apellido2"><input name="beneficiario_telefono"><input name="beneficiario_ubicacion"><input name="pais"><input name="forma"><input name="moneda"><input name="pagador"><input name="tipo_cuenta"><input name="numero_cuenta"><input name="monto_usd"><input name="tasa"><input name="monto_a_pagar"><input name="compania"><input name="notas"></form>
+    <span class="via">Envío de dinero</span>
+    <h2 class="h-sec">Prepara tu envío desde el celular</h2>
+    <p class="lead">Llena los datos y nos llegan al instante. Cuando vengas a la tienda, tu envío ya está listo: solo traes tu identificación y el dinero.</p>
+    <div class="vx" id="vx">
+      <div class="vx-left">
+        <div class="vx-h"><span class="vx-ic"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="11" r="2.5"/><path d="M5.5 17c.6-2 2-3 3.5-3s2.9 1 3.5 3M14 9h4M14 13h4"/></svg></span><h3>Quien envía</h3></div>
+        <div class="vx-card">
+          <div class="ul" data-k="remitente_nombres"><input id="vr1" data-v="remitente_nombres" placeholder=" " autocomplete="given-name"><label for="vr1">Nombre(s)</label><small class="err">Escribe tu nombre.</small></div>
+          <div class="ul" data-k="remitente_apellido1"><input id="vr2" data-v="remitente_apellido1" placeholder=" " autocomplete="family-name"><label for="vr2">Primer apellido</label><small class="err">Escribe tu apellido.</small></div>
+          <div class="ul"><input id="vr3" data-v="remitente_apellido2" placeholder=" " autocomplete="off"><label for="vr3">Segundo apellido (si tiene)</label></div>
+          <div class="ul" data-k="remitente_telefono"><input id="vr4" data-v="remitente_telefono" placeholder=" " type="tel" inputmode="tel" autocomplete="tel-national"><label for="vr4">Teléfono principal</label><small class="err">Escribe tu número de 10 dígitos.</small></div>
+          <div class="ul" data-k="remitente_direccion"><input id="vr5" data-v="remitente_direccion" placeholder=" " autocomplete="street-address"><label for="vr5">Dirección</label><small class="hint">Calle, número, ciudad y código postal</small><small class="err">Escribe tu dirección.</small></div>
+          <div class="ul"><input id="vr6" data-v="remitente_interior" placeholder=" " autocomplete="address-line2"><label for="vr6">Interior, casa o apartamento (opcional)</label></div>
+        </div>
+
+        <div class="vx-h"><span class="vx-ic"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.5 3.5-5.5 6.5-5.5s5.7 2 6.5 5.5"/><path d="M17 8l4 4M21 8l-4 4"/></svg></span><h3>Quien recibe</h3></div>
+        <div class="vx-card">
+          <div class="vx-lab">País</div>
+          <div class="vx-chips" id="vxCo"></div>
+          <div class="ul" data-k="beneficiario_nombres"><input id="vb1" data-v="beneficiario_nombres" placeholder=" " autocomplete="off"><label for="vb1">Nombre(s)</label><small class="err">Escribe el nombre de quien recibe.</small></div>
+          <div class="ul" data-k="beneficiario_apellido1"><input id="vb2" data-v="beneficiario_apellido1" placeholder=" " autocomplete="off"><label for="vb2">Primer apellido</label><small class="err">Escribe su apellido.</small></div>
+          <div class="ul"><input id="vb3" data-v="beneficiario_apellido2" placeholder=" " autocomplete="off"><label for="vb3">Segundo apellido (si tiene)</label></div>
+          <div class="ul" data-k="beneficiario_telefono"><input id="vb4" data-v="beneficiario_telefono" placeholder=" " type="tel" inputmode="tel" autocomplete="off"><label for="vb4" id="vb4l">Teléfono principal</label><small class="err">Escribe su número de teléfono.</small></div>
+          <div class="ul" data-k="beneficiario_ubicacion"><input id="vb5" data-v="beneficiario_ubicacion" placeholder=" " autocomplete="off"><label for="vb5">Ubicación (ciudad y estado)</label><small class="err">Escribe la ciudad y el estado o departamento.</small></div>
+        </div>
+
+        <div class="vx-h"><span class="vx-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 8v8M14.5 9.5c-.6-.8-1.5-1-2.5-1-1.4 0-2.5.7-2.5 1.8 0 2.6 5 1.4 5 4 0 1.1-1.1 1.8-2.5 1.8-1 0-2-.3-2.6-1.1"/></svg></span><h3>Cómo lo recibe</h3></div>
+        <div class="vx-card">
+          <div class="vx-two" id="vxForma">
+            <button type="button" class="vx-opt" data-f="deposito"><span aria-hidden="true">🏦</span>Depósito en su cuenta</button>
+            <button type="button" class="vx-opt" data-f="efectivo"><span aria-hidden="true">🏪</span>Retiro en efectivo</button>
+          </div>
+          <div class="ul sel"><select id="vp1" data-v="moneda"></select><label for="vp1">Moneda</label></div>
+          <div class="ul" data-k="pagador"><input id="vp2" data-v="pagador" placeholder=" " list="vxPayers" autocomplete="off"><label for="vp2" id="vp2l">Buscar banco</label><datalist id="vxPayers"></datalist><small class="err" id="vp2e">Escribe el nombre del banco.</small></div>
+          <div id="vxAcct">
+            <div class="ul sel"><select id="vp3" data-v="tipo_cuenta"><option>Ahorros</option><option>Monetaria / Corriente</option><option>Tarjeta de débito</option><option>CLABE</option></select><label for="vp3">Tipo de cuenta</label></div>
+            <div class="ul" data-k="numero_cuenta"><input id="vp4" data-v="numero_cuenta" placeholder=" " inputmode="numeric" autocomplete="off"><label for="vp4">Número de cuenta</label><small class="hint" id="vp4h">Revisa bien cada número.</small><small class="err">Escribe un número de cuenta válido.</small></div>
+            <div class="ul" data-k="numero_cuenta2"><input id="vp5" data-v="numero_cuenta2" placeholder=" " inputmode="numeric" autocomplete="off"><label for="vp5">Escribe el número de cuenta otra vez</label><small class="err">Los números de cuenta no coinciden.</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vx-right">
+        <div class="vx-sum" id="vxSum">
+          <div class="vx-lab dk">Monto</div>
+          <div class="vx-row">
+            <label class="vx-box big" data-k="monto_usd"><input id="vm1" data-v="monto_usd" inputmode="decimal" aria-label="Monto en dólares"><span>USD</span></label>
+            <i>×</i>
+            <div class="vx-box ro"><b id="vxRate">—</b><span id="vxRateC"></span></div>
+          </div>
+          <div class="vx-mini"><span>Monto</span><span>Tasa de cambio</span></div>
+          <div class="vx-quick"><button type="button" data-q="100">$100</button><button type="button" data-q="200">$200</button><button type="button" data-q="300">$300</button><button type="button" data-q="500">$500</button></div>
+          <div class="vx-eq">
+            <small>Monto a pagar a quien recibe</small>
+            <strong id="vxGet">—</strong>
+            <span id="vxGetC"></span>
+          </div>
+          <div class="vx-line"><span>Comisión</span><b id="vxFee">Se confirma en tienda</b></div>
+          <div class="vx-line tot"><span>Total a pagar</span><b id="vxTot">—</b></div>
+          <div class="ul sel lt"><select id="vm2" data-v="compania"></select><label for="vm2">Compañía (opcional)</label></div>
+          <div class="ul lt"><input id="vm3" data-v="notas" placeholder=" " autocomplete="off"><label for="vm3">Notas (opcional)</label></div>
+          <label class="vx-ok" id="vxOk"><input type="checkbox" id="vxOkC"><span>Confirmo que los datos son correctos y que los nombres están completos, como en la identificación.</span></label>
+          <button type="button" class="btn vx-send" id="vxSend">Enviar solicitud</button>
+          <p class="vx-legal">Es una <b>solicitud</b>: todavía no se envía dinero. Ven a la tienda con tu <b>identificación</b> y el dinero para completar el envío. No pedimos seguro social ni tarjetas por aquí. La tasa es aproximada y se confirma al enviar.</p>
+        </div>
+      </div>
+    </div>
+    <div id="vxDone" hidden></div>
+  </div></div>
+</section>
+
 <!-- ================= NOSOTROS ================= -->
 <section class="view" id="v-nosotros" aria-label="Nosotros">
   <div class="sec"><div class="wrap">
@@ -948,8 +1101,8 @@ body.on-form footer{padding-bottom:120px}
 <script>
 const SITE = "https://imperio-multiservicesllc.netlify.app/";
 const CAJA_URL = SITE + "#formulario";
-const VIEWS = ["inicio","servicios","tucaja","formulario","rastreo","nosotros","ubicacion"];
-const TITLES = {inicio:"Imperio Multi Services LLC | Lexington, KY",servicios:"Servicios | Imperio Multi Services",tucaja:"Tu Caja Express | Imperio Multi Services",formulario:"Formulario de envío | Tu Caja Express",rastreo:"Rastrear mi envío | Imperio Multi Services",nosotros:"Nosotros | Imperio Multi Services",ubicacion:"Ubicación y horario | Imperio Multi Services"};
+const VIEWS = ["inicio","servicios","tucaja","formulario","rastreo","enviar","nosotros","ubicacion"];
+const TITLES = {inicio:"Imperio Multi Services LLC | Lexington, KY",servicios:"Servicios | Imperio Multi Services",tucaja:"Tu Caja Express | Imperio Multi Services",formulario:"Formulario de envío | Tu Caja Express",rastreo:"Rastrear mi envío | Imperio Multi Services",enviar:"Solicitar envío de dinero | Imperio Multi Services",nosotros:"Nosotros | Imperio Multi Services",ubicacion:"Ubicación y horario | Imperio Multi Services"};
 
 function show(){
   let v = (location.hash||"").replace("#","");
@@ -957,8 +1110,8 @@ function show(){
   const toCalc = v==="calculadora";
   if(toCalc) v = "inicio";
   if(!VIEWS.includes(v)) v = "inicio";
-  document.body.classList.toggle("on-form", v==="formulario");
-  const tab = v==="formulario" ? "tucaja" : v==="rastreo" ? "servicios" : v;
+  document.body.classList.toggle("on-form", v==="formulario"||v==="enviar");
+  const tab = v==="formulario" ? "tucaja" : (v==="rastreo"||v==="enviar") ? "servicios" : v;
   VIEWS.forEach(x=>document.getElementById("v-"+x).classList.toggle("on", x===v));
   document.querySelectorAll('nav a[href^="#"]').forEach(a=>{
     if(a.getAttribute("href")==="#"+tab) a.setAttribute("aria-current","page"); else a.removeAttribute("aria-current");
@@ -1012,6 +1165,7 @@ show();
     wa.href = isMoney ? "https://v.viax.co/A18802_es" : "https://wa.me/18593687605?text="+encodeURIComponent(`Hola, quiero información sobre: ${name}.`);
     caja.hidden = name!=="Envío de cajas";
     document.getElementById("tileCalc").hidden = name!=="Envío de dinero";
+    document.getElementById("tileSend").hidden = name!=="Envío de dinero";
     document.getElementById("tileTrack").hidden = !(name==="Envío de dinero"||name==="Envío de cajas");
     cta.hidden=false;
   }));
@@ -1112,6 +1266,9 @@ show();
     onCountry();
   }
   const cur=()=>rows[ci];
+  window.impRate=(pais,m,amt)=>{ const x=rows.find(r=>r.p===pais); if(!x) return null;
+    if(x.via){ const P=(x.via[m]||x.via.deposito||x.via.efectivo||{}); let best=null; for(const k in P){ const r=tierRate(P[k],amt||1); if(r&&(!best||r>best)) best=r; } return best?{r:best,c:x.c,src:"via"}:null; }
+    return x.r?{r:x.r,c:x.c,src:x.src}:null; };
   const tierRate=(tiers,amt)=>{ const t=tiers.find(t=>amt>=t.min-0.001&&amt<=t.max+0.001)||(amt<tiers[0].min?tiers[0]:null); return t?t.rate:null; };
   const amount=()=>Math.max(0,num(send.value)||0);
   function methodsOf(x){ return x.via ? ["deposito","efectivo"].filter(m=>x.via[m]&&Object.keys(x.via[m]).length) : []; }
@@ -1268,6 +1425,107 @@ show();
   $("trkName").addEventListener("input",waLink);
 })();
 
+
+// ===== Solicitud de envío de dinero (estilo formulario de agente; llega a Netlify Forms + WhatsApp) =====
+(function(){
+  const root=document.getElementById("vx"); if(!root) return;
+  const $=id=>document.getElementById(id);
+  const WA="18593687605";
+  const CO=[["México","🇲🇽","MXN",10,[16,18],"CLABE (18 números) o tarjeta (16)"],["Guatemala","🇬🇹","GTQ",8],["Honduras","🇭🇳","HNL",8],["El Salvador","🇸🇻","USD",8],["Nicaragua","🇳🇮","NIO",8],["Colombia","🇨🇴","COP",10],["Rep. Dominicana","🇩🇴","DOP",10],["Ecuador","🇪🇨","USD",9],["Perú","🇵🇪","PEN",9],["Otro","🌎","",0]];
+  const CUR={MXN:"pesos mexicanos",GTQ:"quetzales",HNL:"lempiras",USD:"dólares",NIO:"córdobas",COP:"pesos colombianos",DOP:"pesos dominicanos",PEN:"soles"};
+  const BANKS={"México":["BBVA","Banorte","Banamex","Santander","Bancoppel","Banco Azteca","HSBC","Scotiabank","Inbursa","Banco del Bienestar","Nu","Spin by OXXO","Mercado Pago"],"Guatemala":["Banrural","Banco Industrial","G&T Continental","BAM","Promerica","BAC","Bantrab","Banco Azteca"],"Honduras":["Banpaís","Banco Atlántida","Ficohsa","BAC","Banrural","Banco de Occidente","Davivienda"],"El Salvador":["Banco Agrícola","Banco Cuscatlán","Davivienda","BAC","Promerica","Banco Hipotecario"],"Nicaragua":["BANPRO","LAFISE Bancentro","BAC","Ficohsa","Avanz"],"Colombia":["Bancolombia","Davivienda","Banco de Bogotá","BBVA","Nequi","Daviplata"],"Rep. Dominicana":["Banreservas","Banco Popular","BHD","Scotiabank","Promerica"]};
+  const CASH={"México":["Elektra","OXXO","Walmart / Bodega Aurrera","Bancoppel","Chedraui","Soriana"],"Guatemala":["Banrural","Banco Industrial","Despensa Familiar","Walmart","Elektra"],"Honduras":["Banpaís","Ficohsa","Banco Atlántida","Elektra"],"El Salvador":["Banco Agrícola","Banco Cuscatlán","Davivienda"],"Nicaragua":["BANPRO","LAFISE Bancentro"],"Colombia":["Bancolombia","Efecty"],"Rep. Dominicana":["Banreservas","Caribe Express"]};
+  const COMP=["La que pague mejor hoy","Vía América","MoneyGram","Ria","Vigo","Barri","Girosol"];
+  const store={get(k){try{return JSON.parse(localStorage.getItem(k))}catch(e){return null}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+  const d={pais:"México",forma:"deposito",moneda:"",monto_usd:"200",tipo_cuenta:"Ahorros",compania:COMP[0]};
+  const ME=["remitente_nombres","remitente_apellido1","remitente_apellido2","remitente_telefono","remitente_direccion","remitente_interior"];
+  Object.assign(d,store.get("imp-vx-me")||{});
+  const digits=v=>String(v||"").replace(/\D/g,"");
+  const usd=n=>"$"+(+n||0).toLocaleString("en-US",{minimumFractionDigits:2,maximumFractionDigits:2});
+  const co=()=>CO.find(c=>c[0]===d.pais)||CO[CO.length-1];
+  const val=k=>String(d[k]||"").trim();
+  // llenar campos
+  root.querySelectorAll("[data-v]").forEach(el=>{ if(d[el.dataset.v]!=null && el.tagName!=="SELECT") el.value=d[el.dataset.v];
+    el.addEventListener(el.tagName==="SELECT"?"change":"input",()=>{ d[el.dataset.v]=el.value; el.closest(".ul,.vx-box")?.classList.remove("bad"); if(el.dataset.v==="monto_usd"||el.dataset.v==="moneda") calc(); }); });
+  $("vm2").innerHTML=COMP.map(c=>`<option>${c}</option>`).join(""); $("vm2").value=d.compania;
+  $("vxCo").innerHTML=CO.map(c=>`<button type="button" class="vx-chip" data-c="${c[0]}"><span class="e">${c[1]}</span>${c[0]}</button>`).join("");
+  $("vxCo").querySelectorAll("[data-c]").forEach(b=>b.addEventListener("click",()=>{ if(d.pais!==b.dataset.c){ d.pais=b.dataset.c; d.pagador=""; $("vp2").value=""; } sync(); }));
+  root.querySelectorAll("[data-f]").forEach(b=>b.addEventListener("click",()=>{ d.forma=b.dataset.f; d.pagador=""; $("vp2").value=""; sync(); }));
+  root.querySelectorAll("[data-q]").forEach(b=>b.addEventListener("click",()=>{ d.monto_usd=b.dataset.q; $("vm1").value=d.monto_usd; calc(); }));
+  $("vxOkC").addEventListener("change",()=>$("vxOk").classList.remove("bad"));
+  function sync(){
+    const c=co();
+    $("vxCo").querySelectorAll("[data-c]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.c===d.pais)));
+    root.querySelectorAll("[data-f]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.f===d.forma)));
+    const cur=c[2]; const opts=[...new Set([cur,"USD"].filter(Boolean))];
+    $("vp1").innerHTML=opts.map(o=>`<option value="${o}">${o} – ${CUR[o]||o}</option>`).join("")||`<option value="">Se confirma en tienda</option>`;
+    if(!opts.includes(d.moneda)) d.moneda=opts[0]||""; $("vp1").value=d.moneda;
+    const dep=d.forma==="deposito";
+    $("vxAcct").hidden=!dep;
+    $("vp2l").textContent= dep ? "Buscar banco" : "Buscar tienda donde lo recoge (opcional)";
+    $("vxPayers").innerHTML=((dep?BANKS:CASH)[d.pais]||[]).map(b=>`<option value="${b}">`).join("");
+    $("vp4h").textContent= c[5] || "Revisa bien cada número.";
+    $("vb4l").textContent= c[3] ? `Teléfono principal (${c[3]} números)` : "Teléfono principal";
+    calc();
+  }
+  function rate(){
+    if(d.moneda==="USD" && co()[2]!=="USD") return {r:1,c:"USD"};
+    const r=window.impRate&&window.impRate(d.pais,d.forma==="efectivo"?"efectivo":"deposito",+d.monto_usd||0);
+    return r?{r:r.r,c:r.c}:null;
+  }
+  function calc(){
+    const m=+String(d.monto_usd||"").replace(/[^\d.]/g,"")||0, r=rate();
+    $("vxRate").textContent = r ? r.r.toLocaleString("es-US",{maximumFractionDigits:4}) : "—";
+    $("vxRateC").textContent = r ? r.c : "";
+    $("vxGet").textContent = r&&m ? (m*r.r).toLocaleString("es-US",{minimumFractionDigits:r.c==="COP"?0:2,maximumFractionDigits:r.c==="COP"?0:2}) : "—";
+    $("vxGetC").textContent = r ? (CUR[r.c]||r.c) : "La tasa se confirma en tienda";
+    $("vxTot").textContent = m ? usd(m)+" + comisión" : "—";
+  }
+  function validate(){
+    const bad=[]; const mark=k=>{ const el=root.querySelector(`[data-k="${k}"]`); if(el){ el.classList.add("bad"); bad.push(el); } };
+    ["remitente_nombres","remitente_apellido1","remitente_direccion","beneficiario_nombres","beneficiario_apellido1","beneficiario_ubicacion"].forEach(k=>{ if(!val(k)) mark(k); });
+    if(digits(d.remitente_telefono).length<10) mark("remitente_telefono");
+    const c=co(), bt=digits(d.beneficiario_telefono).length; if(c[3]? bt!==c[3] : bt<7) mark("beneficiario_telefono");
+    if(d.forma==="deposito"){ const n=digits(d.numero_cuenta);
+      if(!val("pagador")) mark("pagador");
+      if(n.length<6 || (c[4]&&!c[4].includes(n.length))) mark("numero_cuenta"); else if(n!==digits(d.numero_cuenta2)) mark("numero_cuenta2"); }
+    const m=+String(d.monto_usd||"").replace(/[^\d.]/g,""); if(!(m>=1&&m<=8000)) mark("monto_usd");
+    if(!$("vxOkC").checked){ $("vxOk").classList.add("bad"); bad.push($("vxOk")); }
+    if(bad[0]){ bad[0].scrollIntoView({block:"center",behavior:"smooth"}); bad[0].querySelector("input")?.focus({preventScroll:true}); }
+    return !bad.length;
+  }
+  const full=(a,b,c)=>[a,b,c].map(x=>String(x||"").trim()).filter(Boolean).join(" ");
+  function textMsg(ref,r){ const L=[`*SOLICITUD DE ENVÍO* ${ref}`,"","*QUIEN ENVÍA*",full(d.remitente_nombres,d.remitente_apellido1,d.remitente_apellido2),`Tel: ${d.remitente_telefono}`,`Dirección: ${val("remitente_direccion")}${val("remitente_interior")?", "+val("remitente_interior"):""}`,"","*QUIEN RECIBE*",full(d.beneficiario_nombres,d.beneficiario_apellido1,d.beneficiario_apellido2),`Tel: ${d.beneficiario_telefono}`,`${val("beneficiario_ubicacion")}, ${d.pais}`,"","*CÓMO LO RECIBE*",d.forma==="deposito"?"Depósito en cuenta":"Retiro en efectivo",`Moneda: ${d.moneda}`];
+    if(d.forma==="deposito") L.push(`Banco: ${val("pagador")}`,`Tipo: ${d.tipo_cuenta}`,`Cuenta: ${digits(d.numero_cuenta)}`); else if(val("pagador")) L.push(`Recoge en: ${val("pagador")}`);
+    L.push("","*MONTO*",`${usd(d.monto_usd)}${r?` × ${r.r} = ${$("vxGet").textContent} ${r.c}`:""}`,`Compañía: ${d.compania}`); if(val("notas")) L.push(`Notas: ${val("notas")}`); return L.join("\n"); }
+  $("vxSend").addEventListener("click",async()=>{
+    if(!validate()) return;
+    const ref="IMP-"+Date.now().toString(36).slice(-5).toUpperCase(), r=rate();
+    const payload={"form-name":"solicitud-envio",ref,fecha:new Date().toLocaleString("es-US",{timeZone:"America/New_York"}),
+      remitente_nombres:val("remitente_nombres"),remitente_apellido1:val("remitente_apellido1"),remitente_apellido2:val("remitente_apellido2"),remitente_telefono:val("remitente_telefono"),remitente_direccion:val("remitente_direccion"),remitente_interior:val("remitente_interior"),
+      beneficiario_nombres:val("beneficiario_nombres"),beneficiario_apellido1:val("beneficiario_apellido1"),beneficiario_apellido2:val("beneficiario_apellido2"),beneficiario_telefono:val("beneficiario_telefono"),beneficiario_ubicacion:val("beneficiario_ubicacion"),pais:d.pais,
+      forma:d.forma==="deposito"?"Depósito en cuenta":"Retiro en efectivo",moneda:d.moneda,pagador:val("pagador"),tipo_cuenta:d.forma==="deposito"?d.tipo_cuenta:"",numero_cuenta:d.forma==="deposito"?digits(d.numero_cuenta):"",
+      monto_usd:d.monto_usd,tasa:r?String(r.r):"",monto_a_pagar:r?`${$("vxGet").textContent} ${r.c}`:"",compania:d.compania,notas:val("notas")};
+    const btn=$("vxSend"); btn.disabled=true; btn.textContent="Enviando…";
+    let sent=false; try{ const res=await fetch("/",{method:"POST",headers:{"Content-Type":"application/x-www-form-urlencoded"},body:new URLSearchParams(payload).toString()}); sent=res.ok; }catch(e){}
+    btn.disabled=false; btn.textContent="Enviar solicitud";
+    const me={}; ME.forEach(k=>me[k]=d[k]); store.set("imp-vx-me",me);
+    const wa=`https://wa.me/${WA}?text=${encodeURIComponent(textMsg(ref,r))}`;
+    root.hidden=true; const done=$("vxDone"); done.hidden=false;
+    done.innerHTML=`<div class="sx-done"><div class="ck" aria-hidden="true">✓</div>
+      <h3>${sent?"¡Recibimos tu solicitud!":"Falta un paso"}</h3>
+      ${sent?`<p>Tu número de solicitud es</p><div class="refno">${ref}</div>`:`<p>No pudimos enviarla por internet. Toca el botón verde para mandárnosla por WhatsApp.</p>`}
+      <ol><li>${sent?"Te escribimos por WhatsApp para confirmar la tasa y el total.":"Envíanos la solicitud por WhatsApp."}</li><li>Ven a la tienda con tu <b>identificación</b> y el dinero.</li><li>Te damos tu recibo y tu familia recibe el dinero.</li></ol>
+      <a class="btn wa-btn" href="${wa}" target="_blank" rel="noopener">${sent?"Avisar por WhatsApp (opcional)":"Enviar por WhatsApp"}</a>
+      <a class="btn lite" href="#ubicacion">Cómo llegar a la tienda</a>
+      <button type="button" class="btn lite" id="vxNew">Hacer otra solicitud</button></div>`;
+    done.scrollIntoView({behavior:"smooth",block:"start"});
+    $("vxNew").addEventListener("click",()=>{ ["beneficiario_nombres","beneficiario_apellido1","beneficiario_apellido2","beneficiario_telefono","beneficiario_ubicacion","pagador","numero_cuenta","numero_cuenta2","notas"].forEach(k=>{ d[k]=""; const el=root.querySelector(`[data-v="${k}"]`); if(el) el.value=""; }); $("vxOkC").checked=false; done.hidden=true; root.hidden=false; root.scrollIntoView({behavior:"smooth"}); });
+  });
+  sync();
+  setTimeout(calc,1500); setTimeout(calc,4000);
+})();
+
 // ===== Chat de ayuda =====
 (function(){
   const WA="18593687605";
@@ -1316,7 +1574,7 @@ show();
     rastreo:()=>bot(`Te ayudo a encontrar tu envío. Ten a la mano tu <b>recibo</b> y toca el botón.
       <div class="opts"><a class="opt go" href="#rastreo">Rastrear mi envío</a></div>`),
     dinero:()=>bot(`Puedes enviar dinero desde tu celular por <b>WhatsApp con Vía América</b>, con el respaldo de Imperio. ¡La primera transferencia es sin tarifa!*
-      <div class="opts"><a class="opt go" href="https://v.viax.co/A18802_es" target="_blank" rel="noopener">Enviar por WhatsApp</a><a class="opt" href="#calculadora">Ver cuánto reciben</a></div>`),
+      <div class="opts"><a class="opt go" href="#enviar">Preparar mi envío con Imperio</a><a class="opt" href="https://v.viax.co/A18802_es" target="_blank" rel="noopener">Enviar por WhatsApp con Vía América</a><a class="opt" href="#calculadora">Ver cuánto reciben</a></div>`),
     caja:()=>bot(`Para mandar una caja, llena tus datos desde el celular antes de venir. Toma unos 3 minutos y nos llega por WhatsApp.
       <div class="opts"><a class="opt go" href="#formulario">Llenar formulario de envío</a><a class="opt" href="${wa("Hola, quiero saber el precio para enviar una caja.")}" target="_blank" rel="noopener">Preguntar precios</a></div>`),
     cambio:()=>bot(`Para revisar un cambio o cancelación necesitamos:<br>• El <b>número de referencia</b> o PIN del envío<br>• El <b>nombre de quien envió</b><br>• Qué quieres cambiar<br><br>Escríbenos con esos datos y un agente lo revisa.
